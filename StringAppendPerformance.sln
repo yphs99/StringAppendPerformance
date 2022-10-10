@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringAppendBenchmark", "StringAppendBenchmark\StringAppendBenchmark.csproj", "{9A91BBB3-2E74-4ABA-9409-02459EBC6A35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringAppendPerformance", "StringAppendPerformance\StringAppendPerformance.csproj", "{0D804AD7-6C57-4420-B616-60CA7C0FBBCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A91BBB3-2E74-4ABA-9409-02459EBC6A35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A91BBB3-2E74-4ABA-9409-02459EBC6A35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A91BBB3-2E74-4ABA-9409-02459EBC6A35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A91BBB3-2E74-4ABA-9409-02459EBC6A35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D804AD7-6C57-4420-B616-60CA7C0FBBCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D804AD7-6C57-4420-B616-60CA7C0FBBCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D804AD7-6C57-4420-B616-60CA7C0FBBCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D804AD7-6C57-4420-B616-60CA7C0FBBCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8FAA48F2-B299-4F70-96A6-FCDA39948CD5}
+	EndGlobalSection
+EndGlobal
