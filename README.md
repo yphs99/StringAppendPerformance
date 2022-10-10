@@ -1,4 +1,4 @@
-# 使用 BenchmarkDotNet 簡單地測試效能
+﻿# 使用 BenchmarkDotNet 簡單地測試效能
 
 ### 前言
 
