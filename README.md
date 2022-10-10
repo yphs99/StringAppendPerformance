@@ -1,4 +1,4 @@
-﻿# 使用 BenchmarkDotNet 簡單地測試效能
+# 使用 BenchmarkDotNet 簡單地測試效能
 
 ### 前言
 
@@ -64,7 +64,7 @@ public class Utility
 }
 ```
 
-#### 在每個相關方法上套上 [Benchmark] 屬性標籤
+#### 在每個相關方法上套上 [Benchmark] 屬性標籤，並在count指定 [Params] 標籤分別執行10、100、1000次串接
 ```
 /// <summary>
 /// 使用 Benchmark 評測字串串接效能
@@ -136,6 +136,52 @@ public class Program
 | Append |   100 |   2,094.37 ns |    39.971 ns |    50.550 ns |   0.6599 |      - |    4160 B |
 | **Concat** |  **1000** | **269,336.32 ns** | **4,773.401 ns** | **7,144.602 ns** | **454.1016** | **6.3477** | **2849736 B** |
 | Append |  1000 |  24,107.01 ns |   448.293 ns |   479.669 ns |   7.3547 | 0.2136 |   46328 B |
+
+### 其他
+
+* 當你在完成優化或重構程式後，需要有個客觀的前後量化數據對照，可以在 Benchmark後面加上baseline設定。
+
+```
+[Benchmark(Baseline = true)]
+public void 原始方法()
+{
+....
+}
+[Benchmark]
+public void 重構優化後方法()
+{
+....
+}
+```
+
+* 支援評測不同平台下(NET Framework, .NET Core, Mono and CoreRT.)的效能。
+
+```
+[ClrJob, MonoJob, CoreJob, CoreRtJob]
+public class StringAppendBenchmark
+```
+或
+
+```
+[SimpleJob(RuntimeMoniker.Net472)]
+[SimpleJob(RuntimeMoniker.NetCoreApp30)]
+public class StringAppendBenchmark
+```
+
+> 若結果出現NA的話，這時需要開啟專案 csproj 檔案，手動調整專案內容，詳見[F&Q](https://benchmarkdotnet.org/articles/faq.html)
+ 
+```
+<TargetFrameworks>netcoreapp3.0;net472</TargetFrameworks>
+```
+
+* 瞭解記憶體分配、使用狀況，其中報告內的Allocated即是記憶體使用狀況。
+
+```
+[MemoryDiagnoser]
+public class StringAppendBenchmark
+```
+
+* 想瞭解其他的設定或更多使用方式可以到底下的參考文件的官網查詢。
 
 #### 範例下載
 
